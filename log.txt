@@ -1,0 +1,3 @@
+11/2/2015
+3pm    * set up initial webapp project and repo
+3:30pm * build basic page frame and elements, enter copy
