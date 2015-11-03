@@ -1,5 +1,14 @@
 $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
+$default-font: "Times Regular", serif;
+$sans-serif-font: "Myriad Pro", sans-serif;
+
+@mixin drop-shadow {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.35);
+}
+
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -15,79 +24,105 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: #fff url('/images/globe.png') no-repeat center top;
+  font-family: $default-font;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.container {
+  width: 850px;
+  padding: 0;
 }
+
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  width: 850px;
+  height: 113px;
+  background-image: url('/images/header-blocks_logo.jpg');
+  margin-bottom: 30px;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+ div {
+  color: #fff;
+  width: 325px;
+  text-align: right;
+
+  &.title {
+    padding-top: 12px;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 50;
   }
+  &.subtitle {
+    font-style: italic;
+  }
+
+  @extend .visuallyhidden;
+ }
+}
+
+.branding {
+  background-image: url('/images/Fulbright_blue.png');
+  background-repeat: no-repeat;
+  background-position: 90px 1px;
+  height: 100px;
+  padding-left: 345px;
+  font-size: 17px;
+
+  a {
+    font-style: italic;
+    font-family: $sans-serif-font;
+  }
+}
+
+.institution-search {
+  width: 830px;
+  margin: 40px auto 20px auto;
+  @include drop-shadow
+
+  span.input-group-addon {
+    font-family: $sans-serif-font;
+    font-style: italic;
+    font-size: 18px;
+  }
+}
+
+.box {
+  @include drop-shadow;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: $sans-serif-font;
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  width: 850px;
+  padding-top: 10px;
+  padding-left: 10px;
+  float: none;
+  margin: 0 auto;
+  font-family: $sans-serif-font;
+  font-size: 14px;
+  color: #fff;
+  height: 35px;
+  background: #fff url('/images/footer.jpg') no-repeat left top;
+
+  a {
+    color: #fff;
+    font-style: italic;
+  }
 }
 
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
 }
