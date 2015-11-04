@@ -7,7 +7,7 @@
 -> 4am * layout finished
 4pm    * data loading
 	[ http://www.flotcharts.org/ ]
-	[ http://www.chartjs.org/docs/ ]
+	[ http://www.chartjs.org/docs/#bar-chart ]
 	[ http://papaparse.com/ ]
 	[ http://pdfcrowd.com/ ]
 -> 7pm * data populating

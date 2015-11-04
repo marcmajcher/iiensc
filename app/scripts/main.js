@@ -11,13 +11,13 @@
 			var ctx;
 			var chartData;
 			var legend;
-			// 	legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-			// };
+
+			Chart.defaults.global.showTooltips = false;
 
 			// populate US student program
-			ctx = document.getElementById("fulbright-us-chart").getContext("2d");
+			ctx = document.getElementById('fulbright-us-chart').getContext('2d');
 			chartData = {
-				labels: ["2013", "2014", "2015"],
+				labels: ['2013', '2014', '2015'],
 				datasets: [
 				{
 					label: 'Applications',
@@ -38,9 +38,9 @@
 			$('#fulbright-adviser-email').text(obj.fpa_email);
 
 			// populate foreign student program
-			ctx = document.getElementById("foreign-student-chart").getContext("2d");
+			ctx = document.getElementById('foreign-student-chart').getContext('2d');
 			chartData = {
-				labels: ["2013", "2014", "2015"],
+				labels: ['2013', '2014', '2015'],
 				datasets: [
 				{
 					label: 'Foreign Students',
@@ -58,9 +58,9 @@
 			$(legend).insertAfter('#foreign-student-chart');
 
 			// populate fulbright scholar program
-			ctx = document.getElementById("scholar-program-chart").getContext("2d");
+			ctx = document.getElementById('scholar-program-chart').getContext('2d');
 			chartData = {
-				labels: ["2013", "2014", "2015"],
+				labels: ['2013', '2014', '2015'],
 				datasets: [
 				{
 					label: 'Visiting',
@@ -82,9 +82,9 @@
 
 			// populate gilman
 			$('gilman-chart').html('<p>2013: '+obj.gilman_2013+'</p><p>2014: '+obj.gilman_2014+'</p><p>2015: '+obj.gilman_2015+'</p>');
-			ctx = document.getElementById("gilman-chart").getContext("2d");
+			ctx = document.getElementById('gilman-chart').getContext('2d');
 			chartData = {
-				labels: ["2012-13", "2013-14", "2014-15"],
+				labels: ['2012-13', '2013-14', '2014-15'],
 				datasets: [
 				{
 					label: 'Gilman',
@@ -96,8 +96,8 @@
 			new Chart(ctx).Bar(chartData);
 
 			// populate iienetwork and GSA boxes
-			$('#check-iien-member').prop("checked", obj.iien_member);
-			$('#check-gsa-partner').prop("checked", obj.gsa_partner);
+			$('#check-iien-member').prop('checked', obj.iien_member);
+			$('#check-gsa-partner').prop('checked', obj.gsa_partner);
 		}
 	}
 
@@ -149,9 +149,12 @@
 			$('#institution-name').autocomplete({
 				source: institutions,
 				change: populate,
-				select: populate
+				// select: populate
+				select: function(event, ui) {
+					$(event.target).val(ui.item.value);
+					populate(event);
+				}
 			}).change(populate); 
-			// TBD: double-check populate on dropdown select
 		}
 	});
 })();
