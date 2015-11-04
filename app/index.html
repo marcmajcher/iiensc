@@ -51,7 +51,7 @@
       <div class="box">
         <h2 class="blue-flag">The Fulbright U.S. Student Program</h2>
         <p>The Fulbright U.S. Student Program provides grants for individually designed study/research projects or for English Teaching Assistant Programs.</p>
-        <div id="fulbright-us-chart"></div>
+        <canvas id="fulbright-us-chart" width="350" height="200"></canvas>
         <div class="box-footer">
           <p>Fulbright U.S. Student Adviser</p>
           <p>
@@ -64,7 +64,7 @@
       <div class="box">
         <h2 class="bright-blue-flag">The Fulbright Foreign Student Program</h2>
         <p>The Fulbright Foreign Student Program enables graduate students, young professionals, and artists from abroad to study and conduct research in the United States.</p>
-        <div id="foreign-student-chart"></div>
+        <canvas id="foreign-student-chart" width="350" height="200"></canvas>
         <p class="regular ruled">The <strong>Foreign Language Teaching Assistant (FLTA)</strong> program provides early career educators from around the world with the opportunity to teach their native language and serve as cultural ambassadors on campuses across the United States.</p>
       </div>
     </div>
@@ -73,7 +73,7 @@
       <div class="box">
         <h2 class="orange-flag">The Fulbright Scholar Program</h2>
         <p>The Fulbright Scholar Program provides funding to faculty and experienced professionals in a wide variety of academic and professional fields.</p>
-        <div id="scholar-program-chart"></div>
+        <canvas id="scholar-program-chart" width="350" height="200"></canvas>
         <p class="regular ruled">For additional international engagement, the <strong>Outreach Lecturing Fund</strong>, part of the Fulbright Scholar Program, allows U.S. institutions to invite Visiting Fulbright Scholars to conduct lectures for students, faculty, and community partners.</p>
         <div class="box-footer">
           <p>Fulbright Scholar Liason: <span id="scholar-liason-name">Name of Person</span></p>
@@ -160,7 +160,7 @@
    <div class="box">
     <h2 class="logo gilman">Gilman Scholarship Program</h2>
     <p>The Gilman Scholarship Program aims to diversify the kinds of students who study abroad and the countries and regions where they go by offering awards to U.S. undergraduates who might otherwise not participate due to financial constraints. </p>
-    <div id="gilman-chart"></div>
+    <canvas id="gilman-chart" width="220" height="200"></canvas>
     <p>Sponsored by the U.S. Department of State Bureau of Educational and Cultural Affairs</p>
     <div class="box-footer">
       <a href="http://www.iie.org/programs/gilman">http://www.iie.org/programs/gilman</a>
@@ -189,7 +189,8 @@
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="/bower_components/Chart.js/Chart.js"></script>
+<script src="/bower_components/jquery-ui/jquery-ui.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

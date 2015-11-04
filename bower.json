@@ -3,7 +3,9 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
-    "modernizr": "~2.8.3"
+    "modernizr": "~2.8.3",
+    "Chart.js": "~1.0.2",
+    "jquery-ui": "~1.11.4"
   },
   "overrides": {
     "bootstrap-sass": {

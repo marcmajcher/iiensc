@@ -1,35 +1,102 @@
 (function() {
 	var datapath = '/data/data.csv';
 	var data = {};
+	var colorBlueBar = '#3b4b5d';
+	var colorOrangeBar = '#c45e29';
 
 	function populate(event) {
 		var key = event.target.value;
 		if (key in data) {
 			var obj = data[key];
+			var ctx;
+			var chartData;
 
 			console.log(obj);
 
 			// populate US student program
-			$('#fulbright-us-chart').html('<p>2013: '+obj.fb_apps_2013+', '+obj.fb_grants_2013+'</p><p>2014: '+obj.fb_apps_2014+', '+obj.fb_grants_2014+'</p><p>2015: '+obj.fb_apps_2015+', '+obj.fb_grants_2015+'</p>');
+			ctx = document.getElementById("fulbright-us-chart").getContext("2d");
+			chartData = {
+				labels: ["2013", "2014", "2015"],
+				datasets: [
+				{
+					label: 'Applications',
+					fillColor: colorBlueBar,
+					data: [obj.fb_apps_2013, obj.fb_apps_2014, obj.fb_apps_2015]
+				},
+				{
+					label: 'Grants',
+					fillColor: colorOrangeBar,
+					data: [obj.fb_grants_2013, obj.fb_grants_2014, obj.fb_grants_2015]
+				}
+				]
+			};
+			new Chart(ctx).Bar(chartData);
+
 			$('#fulbright-adviser-name').text(obj.fpa_name);
 			$('#fulbright-adviser-email').text(obj.fpa_email);
 
 			// populate foreign student program
-			$('#foreign-student-chart').html('<p>2013: '+obj.foreign_students_2013+', '+obj.foreign_flta_2013+'</p><p>2014: '+obj.foreign_students_2014+', '+obj.foreign_flta_2014+'</p><p>2015: '+obj.foreign_students_2015+', '+obj.foreign_flta_2015+'</p>');
+			ctx = document.getElementById("foreign-student-chart").getContext("2d");
+			chartData = {
+				labels: ["2013", "2014", "2015"],
+				datasets: [
+				{
+					label: 'Foreign Students',
+					fillColor: colorBlueBar,
+					data: [obj.foreign_students_2013, obj.foreign_students_2014, obj.foreign_students_2015]
+				},
+				{
+					label: 'FLTAs*',
+					fillColor: colorOrangeBar,
+					data: [obj.foreign_flta_2013, obj.foreign_flta_2014, obj.foreign_flta_2015]
+				}
+				]
+			};
+			new Chart(ctx).Bar(chartData);
 
 			// populate fulbright scholar program
-			$('#scholar-program-chart').html('<p>2013: '+obj.scholar_visiting_2013+', '+obj.scholar_outbound_2013+'</p><p>2014: '+obj.scholar_visiting_2014+', '+obj.scholar_outbound_2014+'</p><p>2015: '+obj.scholar_visiting_2015+', '+obj.scholar_outbound_2015+'</p>');
+			ctx = document.getElementById("scholar-program-chart").getContext("2d");
+			chartData = {
+				labels: ["2013", "2014", "2015"],
+				datasets: [
+				{
+					label: 'Visiting',
+					fillColor: colorBlueBar,
+					data: [obj.scholar_visiting_2013, obj.scholar_visiting_2014, obj.scholar_visiting_2015]
+				},
+				{
+					label: 'Outbound',
+					fillColor: colorOrangeBar,
+					data: [obj.foreign_flta_2013, obj.foreign_flta_2014, obj.foreign_flta_2015]
+				}
+				]
+			};
+			new Chart(ctx).Bar(chartData);
+
 			$('#scholar-liason-name').text(obj.scholar_liason_name);
 			$('#scholar-liason-title').text(obj.scholar_liason_title);
 
 			// populate gilman
 			$('gilman-chart').html('<p>2013: '+obj.gilman_2013+'</p><p>2014: '+obj.gilman_2014+'</p><p>2015: '+obj.gilman_2015+'</p>');
+			ctx = document.getElementById("gilman-chart").getContext("2d");
+			chartData = {
+				labels: ["2012-13", "2013-14", "2014-15"],
+				datasets: [
+				{
+					label: 'Gilman',
+					fillColor: colorBlueBar,
+					data: [obj.gilman_2013, obj.gilman_2014, obj.gilman_2015]
+				}
+				]
+			};
+			new Chart(ctx).Bar(chartData);
 
 			// populate iienetwork and GSA boxes
 			$('#check-iien-member').prop("checked", obj.iien_member);
 			$('#check-gsa-partner').prop("checked", obj.gsa_partner);
 		}
 	}
+
 
 	Papa.parse(datapath, {
 		download: true,
