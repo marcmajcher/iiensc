@@ -43,8 +43,8 @@
     </div>
 
     <div class="input-group institution-search">
-      <span class="input-group-addon" id="institution-name">Institution Name</span>
-      <input type="text" class="form-control" aria-describedby="institution-name">
+      <span class="input-group-addon" for="institution-name">Institution Name</span>
+      <input type="text" class="form-control" id="institution-name" aria-describedby="institution-name">
     </div>
 
     <div class="col-md-6">
@@ -186,6 +186,7 @@
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -205,6 +206,7 @@
 <!-- endbuild -->
 
 <!-- build:js scripts/main.js -->
+<script src="scripts/papaparse.min.js"></script>
 <script src="scripts/main.js"></script>
 <!-- endbuild -->
 
