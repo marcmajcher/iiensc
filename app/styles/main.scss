@@ -121,6 +121,22 @@ body {
   }
 }
 
+.bar-legend {
+  list-style-type: none;
+  float: right;
+  margin-top: -150px;
+
+  li span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    content: " ";
+    float: left;
+    margin-right: 6px;
+    margin-top: 5px;
+  }
+}
+
 .box {
   @include drop-shadow;
   padding: 10px;

@@ -10,8 +10,9 @@
 			var obj = data[key];
 			var ctx;
 			var chartData;
-
-			console.log(obj);
+			var legend;
+			// 	legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+			// };
 
 			// populate US student program
 			ctx = document.getElementById("fulbright-us-chart").getContext("2d");
@@ -30,7 +31,8 @@
 				}
 				]
 			};
-			new Chart(ctx).Bar(chartData);
+			legend = new Chart(ctx).Bar(chartData).generateLegend();
+			$(legend).insertAfter('#fulbright-us-chart');
 
 			$('#fulbright-adviser-name').text(obj.fpa_name);
 			$('#fulbright-adviser-email').text(obj.fpa_email);
@@ -52,7 +54,8 @@
 				}
 				]
 			};
-			new Chart(ctx).Bar(chartData);
+			legend = new Chart(ctx).Bar(chartData).generateLegend();
+			$(legend).insertAfter('#foreign-student-chart');
 
 			// populate fulbright scholar program
 			ctx = document.getElementById("scholar-program-chart").getContext("2d");
@@ -71,7 +74,8 @@
 				}
 				]
 			};
-			new Chart(ctx).Bar(chartData);
+			legend = new Chart(ctx).Bar(chartData).generateLegend();
+			$(legend).insertAfter('#scholar-program-chart');
 
 			$('#scholar-liason-name').text(obj.scholar_liason_name);
 			$('#scholar-liason-title').text(obj.scholar_liason_title);
