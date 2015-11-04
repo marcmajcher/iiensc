@@ -79,8 +79,8 @@
 				source: institutions,
 				change: populate,
 				select: populate
-			});
-
+			}).change(populate); 
+			// TBD: double-check populate on dropdown select
 		}
 	});
 })();
