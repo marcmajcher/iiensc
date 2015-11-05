@@ -43,7 +43,7 @@
 				labels: ['2013', '2014', '2015'],
 				datasets: [
 				{
-					label: 'Foreign Students',
+					label: 'Foreign<br/>Students',
 					fillColor: colorBlueBar,
 					data: [obj.foreign_students_2013, obj.foreign_students_2014, obj.foreign_students_2015]
 				},

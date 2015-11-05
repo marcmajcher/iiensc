@@ -277,6 +277,13 @@ body {
   }
 }
 
+.dept-state-logo {
+  background-image: url('../images/Dept_State_Logo.png');
+  background-repeat: no-repeat;
+  font-style: normal;
+  padding-left: 70px;
+}
+
 .small-href {
   font-size: 14px;
 }
@@ -301,6 +308,11 @@ body {
 
 .container-narrow > hr {
   margin: 30px 0;
+}
+
+.pdf {
+  font-family: $sans-serif-font;
+  text-align: center;
 }
 
 .visuallyhidden { 
