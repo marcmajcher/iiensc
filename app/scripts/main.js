@@ -32,7 +32,7 @@
 				]
 			};
 			legend = new Chart(ctx).Bar(chartData).generateLegend();
-			$(legend).insertAfter('#fulbright-us-chart');
+			$('#fulbright-us-legend').html(legend);
 
 			$('#fulbright-adviser-name').text(obj.fpa_name);
 			$('#fulbright-adviser-email').text(obj.fpa_email);
@@ -55,7 +55,7 @@
 				]
 			};
 			legend = new Chart(ctx).Bar(chartData).generateLegend();
-			$(legend).insertAfter('#foreign-student-chart');
+			$('#foreign-student-legend').html(legend);
 
 			// populate fulbright scholar program
 			ctx = document.getElementById('scholar-program-chart').getContext('2d');
@@ -75,7 +75,7 @@
 				]
 			};
 			legend = new Chart(ctx).Bar(chartData).generateLegend();
-			$(legend).insertAfter('#scholar-program-chart');
+			$('#scholar-program-legend').html(legend);
 
 			$('#scholar-liason-name').text(obj.scholar_liason_name);
 			$('#scholar-liason-title').text(obj.scholar_liason_title);
@@ -102,7 +102,6 @@
 			$('#current-date').text(obj.date);
 		}
 	}
-
 
 	Papa.parse(datapath, {
 		download: true,

@@ -143,6 +143,10 @@ body {
   }
 }
 
+#scholar-program-legend .bar-legend {
+  margin-top: -250px;
+}
+
 .box {
   @include drop-shadow;
   padding: 10px;
@@ -277,7 +281,6 @@ body {
   font-size: 14px;
 }
 
-/* Custom page footer */
 .footer {
   width: 850px;
   padding-top: 10px;
@@ -310,4 +313,15 @@ body {
 
 .ui-helper-hidden-accessible {
   @extend .visuallyhidden;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 991px) {
+  .box-iienetwork {
+    height: auto;
+  }
+
+  .box-gilman {
+    height: auto;
+  }
 }
