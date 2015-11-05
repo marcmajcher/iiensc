@@ -1,15 +1,17 @@
-11/2/2015
-3pm    * set up initial webapp project and repo
-3:30pm * build basic page frame and elements, enter copy
--> 6pm * header/branding styling/layout
-11/3/2015
-1:30am * css and layout
--> 4am * layout finished
-4pm    * data loading
-	[ http://www.flotcharts.org/ ]
-	[ http://www.chartjs.org/docs/#bar-chart ]
-	[ http://papaparse.com/ ]
-	[ http://pdfcrowd.com/ ]
--> 7pm * data populating
-10pm   * starting graph work
+[ http://www.chartjs.org/docs/#bar-chart ]
+[ http://papaparse.com/ ]
+[ http://pdfcrowd.com/ ]
 
+11/2/2015
+3pm       * set up initial webapp project and repo
+3:30pm    * build basic page frame and elements, enter copy
+-> 6pm    * header/branding styling/layout
+11/3/2015
+1:30am    * css and layout
+-> 4am    * layout finished
+4pm       * data loading
+-> 7pm    * data populating
+10pm      * starting graph work
+11/4/2015
+-> 1:30am * dist up at http://marcmajcher.com/c/iiensc/
+10:30pm   * feedback/fixes

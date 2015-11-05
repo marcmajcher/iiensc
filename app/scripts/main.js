@@ -1,5 +1,5 @@
 (function() {
-	var datapath = '/data/data.csv';
+	var datapath = 'data/data.csv';
 	var data = {};
 	var colorBlueBar = '#3b4b5d';
 	var colorOrangeBar = '#c45e29';
@@ -63,7 +63,7 @@
 				labels: ['2013', '2014', '2015'],
 				datasets: [
 				{
-					label: 'Visiting',
+					label: 'Core Visiting',
 					fillColor: colorBlueBar,
 					data: [obj.scholar_visiting_2013, obj.scholar_visiting_2014, obj.scholar_visiting_2015]
 				},
@@ -98,6 +98,8 @@
 			// populate iienetwork and GSA boxes
 			$('#check-iien-member').prop('checked', obj.iien_member);
 			$('#check-gsa-partner').prop('checked', obj.gsa_partner);
+
+			$('#current-date').text(obj.date);
 		}
 	}
 
@@ -142,7 +144,9 @@
 					gilman_2015: arr[26],
 
 					gsa_partner: arr[27],
-					iien_member: arr[28]
+					iien_member: arr[28],
+
+					date: arr[29]
 				};
 			});
 
@@ -157,4 +161,6 @@
 			}).change(populate); 
 		}
 	});
+
+	// TODO: shim heights of .box-ieenetwork and .box-gilman to fill column height on resize
 })();
