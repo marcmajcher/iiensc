@@ -24,6 +24,7 @@ $color-dark-blue: #1F6FB6;
 
 /* Space out content a bit */
 body {
+  background-color: #eee;
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: $default-font;
@@ -278,6 +279,7 @@ body {
 }
 
 .dept-state-logo {
+  margin-top: 14px;
   background-image: url('../images/Dept_State_Logo.png');
   background-repeat: no-repeat;
   font-style: normal;
@@ -325,6 +327,11 @@ body {
 
 .ui-helper-hidden-accessible {
   @extend .visuallyhidden;
+}
+
+@media print
+{
+    * {-webkit-print-color-adjust:exact;}
 }
 
 /* Responsive for smaller screens */
