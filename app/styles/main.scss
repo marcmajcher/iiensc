@@ -132,13 +132,13 @@ body {
   list-style-type: none;
   float: right;
   margin-top: -150px;
+  width: 140px;
 
   li span {
-    display: block;
+    display: inline-block;
     width: 10px;
     height: 10px;
     content: " ";
-    float: left;
     margin-right: 6px;
     margin-top: 5px;
   }
