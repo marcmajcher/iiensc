@@ -175,6 +175,8 @@
 		}
 	});
 
-
-	// TODO: shim heights of .box-ieenetwork and .box-gilman to fill column height on resize
+	$('#print-to-pdf').click(function() {
+		alert("Check 'print background graphics' in print dialog.");
+		window.print();
+	});
 })();

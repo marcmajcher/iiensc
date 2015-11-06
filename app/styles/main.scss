@@ -225,6 +225,7 @@ body {
       background-image: url('../images/GilmanProgram_logo.png');
     }
     &.gsa {
+      float: left;
       width: 210px;
       height: 75px;
       background-image: url('../images/GenStudyAbroad_logo.png');
@@ -258,6 +259,25 @@ body {
 
 .box-gilman {
   height: 670px;
+}
+
+.box-gsa {
+  p {
+    width: 530px;
+    margin-left: 240px;
+  }
+
+  div.checkbox {
+    margin-left: 90px;
+    margin-top: -40px;
+  }
+}
+
+.checkbox {
+  font-family: $sans-serif-font;
+  font-size: 18px;
+  font-style: normal;
+  color: $color-dark-blue;
 }
 
 .iie-logo {
@@ -315,6 +335,7 @@ body {
 .pdf {
   font-family: $sans-serif-font;
   text-align: center;
+  cursor: pointer;
 }
 
 .visuallyhidden { 
@@ -329,9 +350,17 @@ body {
   @extend .visuallyhidden;
 }
 
+// .box {color: red;}
+
+@media all {
+  .page-break { display: none; }
+}
+
 @media print
 {
   * {-webkit-print-color-adjust:exact;}
+
+  .page-break { display: block; page-break-before: always; }
 
   body {
     background-color: #fff;
@@ -339,14 +368,15 @@ body {
 
   .box {
     font-size: 14px;
+    line-height: 14px;
   }
-}
 
-/* Note: for production, be sure to remove/comment out the @media print section in 
-             bootstrap's _print.scss, so everything prints properly in PDF version */
+  .iie-logo {
+    height: 105px;
+    font-size: 14px;
+    line-height: 14px;
+  }
 
-/* Responsive for smaller screens */
-@media screen and (max-width: 991px) {
   .box-iienetwork {
     height: auto;
   }
@@ -354,4 +384,18 @@ body {
   .box-gilman {
     height: auto;
   }
+
+  .box-gsa {
+
+    div.checkbox {
+      margin-top: 0;
+      margin-left: 0;
+
+      label {
+        padding-top: 10px;
+        margin-left: -100px;
+      }
+    }
+  }
 }
+
