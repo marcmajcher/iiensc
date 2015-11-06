@@ -92,7 +92,7 @@ body {
 
 .institution-search {
   width: 830px;
-  margin: 40px auto 20px auto;
+  margin: 30px auto 20px auto;
   @include drop-shadow
 
   span.input-group-addon {
@@ -332,6 +332,16 @@ body {
 @media print
 {
     * {-webkit-print-color-adjust:exact;}
+
+    // .col-xs-12, .col-xs-6, .col-xs-4 {
+    //   padding-right: 0 !important;
+    // }
+
+.col-xs-6 { width: 46%; }
+.col-xs-4 {width: 29%; }
+                
+    /* Note: for production, be sure to remove/comment out the @media print section in 
+             bootstrap's _print.scss, so everything prints properly in PDF version */
 }
 
 /* Responsive for smaller screens */

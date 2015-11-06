@@ -6,6 +6,12 @@
 
 	function populate(event) {
 		var key = event.target.value;
+		location.hash = encodeURI(key);
+		render(key);
+	}
+
+	function render(key) {
+		console.log("rending "+key)
 		if (key in data) {
 			var obj = data[key];
 			var ctx;
@@ -13,6 +19,8 @@
 			var legend;
 
 			Chart.defaults.global.showTooltips = false;
+
+			$('#institution-name').val(key);
 
 			// populate US student program
 			ctx = document.getElementById('fulbright-us-chart').getContext('2d');
@@ -158,8 +166,16 @@
 					populate(event);
 				}
 			}).change(populate); 
+
+			// if we have an institution in the URL, load it
+			if (location.hash) {
+				var uname = decodeURI(location.hash.substr(1));
+				render(uname);
+			}
+
 		}
 	});
+
 
 	// TODO: shim heights of .box-ieenetwork and .box-gilman to fill column height on resize
 })();
