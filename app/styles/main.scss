@@ -331,18 +331,15 @@ body {
 
 @media print
 {
-    * {-webkit-print-color-adjust:exact;}
+  * {-webkit-print-color-adjust:exact;}
 
-    // .col-xs-12, .col-xs-6, .col-xs-4 {
-    //   padding-right: 0 !important;
-    // }
-
-.col-xs-6 { width: 46%; }
-.col-xs-4 {width: 29%; }
-                
-    /* Note: for production, be sure to remove/comment out the @media print section in 
-             bootstrap's _print.scss, so everything prints properly in PDF version */
+  body {
+    background-color: #fff;
+  }
 }
+
+/* Note: for production, be sure to remove/comment out the @media print section in 
+             bootstrap's _print.scss, so everything prints properly in PDF version */
 
 /* Responsive for smaller screens */
 @media screen and (max-width: 991px) {

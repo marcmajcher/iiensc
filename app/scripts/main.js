@@ -6,12 +6,11 @@
 
 	function populate(event) {
 		var key = event.target.value;
-		location.hash = encodeURI(key);
+		// location.hash = encodeURI(key);
 		render(key);
 	}
 
 	function render(key) {
-		console.log("rending "+key)
 		if (key in data) {
 			var obj = data[key];
 			var ctx;
