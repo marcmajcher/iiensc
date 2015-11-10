@@ -131,7 +131,7 @@ body {
 .bar-legend {
   list-style-type: none;
   float: right;
-  margin-top: -150px;
+  margin-top: -130px;
   width: 140px;
 
   li span {
@@ -145,7 +145,7 @@ body {
 }
 
 #scholar-program-legend .bar-legend {
-  margin-top: -250px;
+  margin-top: -230px;
 }
 
 .box {
@@ -268,8 +268,12 @@ body {
   }
 
   div.checkbox {
-    margin-left: 90px;
-    margin-top: -40px;
+    padding-left: 100px;
+    margin-top: -50px;
+  }
+
+  .box-footer {
+    margin-top: 20px;
   }
 }
 
@@ -386,7 +390,9 @@ body {
   }
 
   .box-gsa {
-
+    .box {
+      margin-bottom: 10px;
+    }    
     div.checkbox {
       margin-top: 0;
       margin-left: 0;
